@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 16:21:11 by roversch          #+#    #+#             */
-/*   Updated: 2025/09/22 16:52:47 by roversch         ###   ########.fr       */
+/*   Updated: 2025/09/25 12:33:10 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,13 @@ class Contact{
 		std::string	phone_nbr_;
 		std::string	dark_scrt_;
 	public:
-		
+		void set_info(
+			const std::string& first,
+			const std::string& last,
+			const std::string& nick,
+			const std::string& number,
+			const std::string& secret);
+		void display_info();
 };
 
 #endif

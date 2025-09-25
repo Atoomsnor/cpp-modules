@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 16:02:46 by roversch          #+#    #+#             */
-/*   Updated: 2025/09/25 10:48:09 by roversch         ###   ########.fr       */
+/*   Updated: 2025/09/25 12:10:46 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class PhoneBook{
 		bool	full_;
 	public:
 		PhoneBook();
-		void addcontact();
-		void searchcontact();
+		void add_info();
+		void search_info();
 };
 
 #endif
