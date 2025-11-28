@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/22 16:02:46 by roversch          #+#    #+#             */
-/*   Updated: 2025/09/25 12:10:46 by roversch         ###   ########.fr       */
+/*   Created: 2025/11/28 13:56:12 by roversch          #+#    #+#             */
+/*   Updated: 2025/11/28 18:03:21 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#include "PhoneBook.hpp"
+#include <iostream>
 
-#include "contact.hpp"
+void	PhoneBook::addContact()
+{
+	std::string first, last, nick, phone, secret;
 
-class PhoneBook{
-	private:
-		Contact	contacts_[8];
-		int		count_;
-		bool	full_;
-	public:
-		PhoneBook();
-		void add_info();
-		void search_info();
-};
+	std::cout << "Adding contact nr: " << count << std::endl;
 
-#endif
+	while (first.empty())
+	{
+		std::cout << "First name: ";
+			
+	}
+}
+
+void	PhoneBook::getContact()
+{
+	
+}

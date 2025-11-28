@@ -6,7 +6,7 @@
 #    By: roversch <roversch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/22 16:01:46 by roversch          #+#    #+#              #
-#    Updated: 2025/09/22 16:35:34 by roversch         ###   ########.fr        #
+#    Updated: 2025/11/28 13:53:50 by roversch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ DEPFLAGS	= -MMD
 INCLUDES	= -I ./inc
 
 SRC_DIR		= src
-SRC			= phonebook.cpp contact.cpp
+SRC			= PhoneBook.cpp Contact.cpp main.cpp
 
 OBJ_DIR		= obj
 OBJ			= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
