@@ -6,37 +6,48 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 13:56:15 by roversch          #+#    #+#             */
-/*   Updated: 2025/11/28 17:46:11 by roversch         ###   ########.fr       */
+/*   Updated: 2025/12/04 16:57:07 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include <iostream>
 
-void	Contact::set_first_name(std::string str)
+Contact::Contact(void)
+{
+	std::cout << "Contact constructor called!" << std::endl;
+}
+
+Contact::~Contact(void)
+{
+	std::cout << "Contact destructor called!" << std::endl;
+}
+
+void	Contact::setFirstName(std::string str)
 {
 	first_name = str;
 	return ;
 }
 
-void	Contact::set_last_name(std::string str)
+void	Contact::setLastName(std::string str)
 {
 	last_name = str;
 	return ;
 }
 
-void	Contact::set_nickname(std::string str)
+void	Contact::setNickname(std::string str)
 {
 	nickname = str;
 	return ;
 }
 
-void	Contact::set_phone_number(std::string str)
+void	Contact::setPhoneNumber(std::string str)
 {
 	phone_number = str;
 	return ;
 }
 
-void	Contact::set_darkest_secret(std::string str)
+void	Contact::setDarkestSecret(std::string str)
 {
 	darkest_secret = str;
 	return ;
