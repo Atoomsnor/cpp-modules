@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 13:56:12 by roversch          #+#    #+#             */
-/*   Updated: 2025/12/05 15:23:03 by roversch         ###   ########.fr       */
+/*   Updated: 2025/12/05 16:11:26 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ PhoneBook::PhoneBook(void)
 {
 	std::cout << "PhoneBook constructor called!" << std::endl;
 	count = 0;
-	full = false;
 }
 
 PhoneBook::~PhoneBook(void)
@@ -42,9 +41,12 @@ void	PhoneBook::addContact(void)
 {
 	std::string first, last, nick, phone, secret;
 
-	if (full == true)
+	if (count == 3)
+	{
 		moveContacts();
-	std::cout << "Adding contact nr: " << count << std::endl;
+		count = 2;
+	}
+	std::cout << "Adding contact nr: " << count + 1 << std::endl;
 	while (first.empty())
 	{
 		std::cout << "First name: ";
@@ -80,19 +82,22 @@ void	PhoneBook::addContact(void)
 			return ;
 		contact[count].setDarkestSecret(secret);
 	}
-	if (full == false)
+	if (count != 3)
 		count++;
-	if (count == 3)
-		full = true;
 }
 
-static void	print_get_contact(Contact contact)
+static void	print_search_contact(Contact &contact)
 {
 	std::cout << "First name: " << "'" << contact.getFirstName() <<  "'" << std::endl;
 	std::cout << "Last name: " << "'" << contact.getLastName() << "'" << std::endl;
 	std::cout << "Nickname: " << "'" << contact.getNickname() << "'" << std::endl;
 	std::cout << "Phonenumber: " << "'" << contact.getPhoneNumber() << "'" << std::endl;
 	std::cout << "Darkest secret: " << "'" << contact.getDarkestSecret() << "'" << std::endl;
+}
+
+void	PhoneBook::searchInterface(void)
+{
+	//fancy stupid pipes n shit
 }
 
 void	PhoneBook::searchContact(void)
@@ -108,10 +113,10 @@ void	PhoneBook::searchContact(void)
 		if (number.empty())
 			continue ;
 		idx = std::atoi(number.c_str()) - 1;
-		if (idx >= 0 && idx < count)
+		if (idx >= 0 && idx < count + 1)
 			break ;
 		std::cout << "Invalid index, try again." << std::endl;
 	}
 	std::cout << "Displaying contact nr: " << number << std::endl;
-	print_get_contact(contact[idx]);
+	print_search_contact(contact[idx]);
 }
