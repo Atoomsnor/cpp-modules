@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 13:56:27 by roversch          #+#    #+#             */
-/*   Updated: 2025/12/04 16:49:31 by roversch         ###   ########.fr       */
+/*   Updated: 2025/12/05 15:07:38 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,11 @@ int	main()
 		if (command == "ADD")
 			pb.addContact();
 		else if (command == "SEARCH")
-			pb.getContact();
-		if (command == "EXIT")
+			pb.searchContact();
+		else if (command == "EXIT")
 			break ;
 		else
 			std::cout << "Unknown Command" << std::endl;
 	}
+	std::cout << "Goodbye <3" << std::endl;
 }
