@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 13:55:08 by roversch          #+#    #+#             */
-/*   Updated: 2025/12/05 16:11:16 by roversch         ###   ########.fr       */
+/*   Updated: 2025/12/08 14:47:05 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 
 class PhoneBook {
 	private:
-		Contact	contact[3];
+		Contact	contact[8];
 		int		count;
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
-		void	moveContacts();
-		void	addContact();
-		void	searchContact();
-		void	searchInterface();
+		void	moveContacts(void);
+		void	addContact(void);
+		void	searchContact(void) const;
+		void	searchInterface(void) const;
 
 };
 

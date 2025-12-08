@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 13:56:15 by roversch          #+#    #+#             */
-/*   Updated: 2025/12/05 15:05:13 by roversch         ###   ########.fr       */
+/*   Updated: 2025/12/08 14:46:27 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 Contact::Contact(void)
 {
-	std::cout << "Contact constructor called!" << std::endl;
+	// std::cout << "Contact constructor called!" << std::endl;
 }
 
 Contact::~Contact(void)
 {
-	std::cout << "Contact destructor called!" << std::endl;
+	// std::cout << "Contact destructor called!" << std::endl;
 }
 
 void	Contact::setFirstName(std::string str)
