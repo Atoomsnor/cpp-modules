@@ -6,35 +6,40 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 13:54:59 by roversch          #+#    #+#             */
-/*   Updated: 2025/12/08 14:45:34 by roversch         ###   ########.fr       */
+/*   Updated: 2025/12/15 13:35:42 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
 #include <string>
 
-class Contact {
+class Contact
+{
 	private:
 		std::string first_name;
 		std::string last_name;
 		std::string nickname;
 		std::string phone_number;
 		std::string darkest_secret;
+
 	public:
 		Contact(void);
 		~Contact(void);
-		void		setFirstName(std::string str);
-		void		setLastName(std::string str);
-		void		setNickname(std::string str);
-		void		setPhoneNumber(std::string str);
-		void		setDarkestSecret(std::string str);
-		std::string getFirstName(void) const;
-		std::string getLastName(void) const;
-		std::string getNickname(void) const;
-		std::string getPhoneNumber(void) const;
-		std::string getDarkestSecret(void) const;
+
+		void	setFirstName(std::string str);
+		void	setLastName(std::string str);
+		void	setNickname(std::string str);
+		void	setPhoneNumber(std::string str);
+		void	setDarkestSecret(std::string str);
+
+		std::string	getFirstName(void) const;
+		std::string	getLastName(void) const;
+		std::string	getNickname(void) const;
+		std::string	getPhoneNumber(void) const;
+		std::string	getDarkestSecret(void) const;
 };
 
 #endif

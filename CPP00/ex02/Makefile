@@ -6,7 +6,7 @@
 #    By: roversch <roversch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/11 13:38:10 by roversch          #+#    #+#              #
-#    Updated: 2025/12/11 14:41:21 by roversch         ###   ########.fr        #
+#    Updated: 2025/12/15 13:37:42 by roversch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ NAME		= account
 CPP			= c++
 CPPFLAGS	= -Wall -Wextra -Werror
 DEPFLAGS	= -MMD
-
 INCLUDES	= -I .
 
 SRC			= Account.cpp tests.cpp

@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 13:56:12 by roversch          #+#    #+#             */
-/*   Updated: 2025/12/08 14:46:59 by roversch         ###   ########.fr       */
+/*   Updated: 2025/12/15 13:28:27 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ PhoneBook::~PhoneBook(void)
 
 void	PhoneBook::moveContacts(void)
 {
-	std::cout << "Moving contacts" << std::endl;
 	for (int i = 0; i < 7; i++)
 	{
 		contact[i].setFirstName(contact[i + 1].getFirstName());
@@ -46,7 +45,6 @@ void	PhoneBook::addContact(void)
 		moveContacts();
 		count = 7;
 	}
-	std::cout << "Adding contact nr: " << count + 1 << std::endl;
 	while (first.empty())
 	{
 		std::cout << "First name: ";
