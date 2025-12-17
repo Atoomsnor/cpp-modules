@@ -5,19 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: roversch <roversch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/12/11 13:38:10 by roversch          #+#    #+#              #
-#    Updated: 2025/12/17 15:19:10 by roversch         ###   ########.fr        #
+#    Created: 2025/12/17 16:17:01 by roversch          #+#    #+#              #
+#    Updated: 2025/12/17 16:17:13 by roversch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= account
+NAME		= zombie
 
 CPP			= c++
 CPPFLAGS	= -Wall -Wextra -Werror
 DEPFLAGS	= -MMD
-INCLUDES	= -I .
+INCLUDES	= -I ./inc
 
-SRC			= Account.cpp tests.cpp
+SRC_DIR		= src
+SRC			= main.cpp Zombie.cpp zombieHorde.cpp
 
 OBJ_DIR		= obj
 OBJ			= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
@@ -30,7 +31,7 @@ $(NAME): $(OBJ) Makefile
 $(OBJ_DIR):
 	mkdir -p $@
 
-$(OBJ_DIR)/%.o: %.cpp Makefile | $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp Makefile | $(OBJ_DIR)
 	$(CPP) -c $(CPPFLAGS) $(DEPFLAGS) $(INCLUDES) $< -o $@
 
 clean:

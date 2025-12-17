@@ -5,34 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/28 13:56:27 by roversch          #+#    #+#             */
-/*   Updated: 2025/12/17 14:05:02 by roversch         ###   ########.fr       */
+/*   Created: 2025/12/17 16:17:48 by roversch          #+#    #+#             */
+/*   Updated: 2025/12/17 17:00:56 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-#include <PhoneBook.hpp>
+#include "Zombie.hpp"
 
-int	main()
+int	main(void)
 {
-	PhoneBook	pb;
-	std::string	command;
-
-	while (true)
-	{
-		std::cout << "Please enter ADD, SEARCH or EXIT" << std::endl;
-		std::cout << "> ";
-		if (!std::getline(std::cin, command))
-			break ;
-		if (command == "ADD")
-			pb.addContact();
-		else if (command == "SEARCH")
-			pb.searchContact();
-		else if (command == "EXIT")
-			break ;
-		else
-			std::cout << "Unknown Command" << std::endl;
-	}
-	std::cout << "Goodbye <3" << std::endl;
+	Zombie *horde = zombieHorde(5, "BlackLotus");
+	for (int i = 0; i < 5; i++)
+		horde[i].announce();
+	delete[](horde);
 }
