@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   humanA.cpp                                         :+:      :+:    :+:   */
+/*   HarlFilter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 17:23:11 by roversch          #+#    #+#             */
-/*   Updated: 2025/12/17 17:55:09 by roversch         ###   ########.fr       */
+/*   Created: 2025/12/23 14:01:49 by roversch          #+#    #+#             */
+/*   Updated: 2025/12/23 15:34:01 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#pragma once
 
-HumanA::HumanA(std::string name, Weapon &weapon)
-{
-	this->name = name;
-	this->weapon = &weapon;
-}
+# include <iostream>
 
-HumanA::~HumanA(void)
+enum	eLevel
 {
-}
+	eUnknown,
+	eDebug,
+	eInfo,
+	eWarning,
+	eError,
+};
 
-void	HumanA::attack(void)
+class	Harl
 {
-	std::cout << name << " attacks with their " << weapon->getType() << std::endl;
-}
+	private:
+		void	unknown(void);
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+
+	public:
+		Harl(void);
+		~Harl(void);
+
+		int		findlevel(std::string level);
+		void	complain(std::string level);
+};

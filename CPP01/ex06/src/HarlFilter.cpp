@@ -1,0 +1,87 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HarlFilter.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/23 14:02:48 by roversch          #+#    #+#             */
+/*   Updated: 2025/12/23 15:52:52 by roversch         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "HarlFilter.hpp"
+
+Harl::Harl(void) {}
+Harl::~Harl(void) {}
+
+int	Harl::findlevel(std::string level)
+{
+	static const char *levels[4] =
+	{
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR"
+	};
+
+	for (int i = 0; i < 4; i++)
+	{
+		if (level == levels[i])
+			return (i + 1);
+	}	
+	return (0);
+}
+
+void	Harl::complain(std::string level)
+{
+	void (Harl::*funcs[5])(void) =
+	{
+		&Harl::unknown,
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error,
+	};
+
+	switch	(findlevel(level))
+	{
+		case	eDebug:
+			(this->*funcs[1])();
+		case	eInfo:
+			(this->*funcs[2])();
+		case	eWarning:
+			(this->*funcs[3])();
+		case	eError:
+			(this->*funcs[4])();
+			break;
+		case	eUnknown:
+			(this->*funcs[0])();
+			break;
+	}
+}
+
+void	Harl::unknown(void)
+{
+	std::cout << "Unknown Message" << std::endl;
+}
+
+void	Harl::debug(void)
+{
+	std::cout << "This is a Debug message" << std::endl;
+}
+
+void	Harl::info(void)
+{
+	std::cout << "This is an Info message" << std::endl;
+}
+
+void	Harl::warning(void)
+{
+	std::cout << "This is a Warning message" << std::endl;
+}
+
+void	Harl::error(void)
+{
+	std::cout << "This is an Error message" << std::endl;
+}

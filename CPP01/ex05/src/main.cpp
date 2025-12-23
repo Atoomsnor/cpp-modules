@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 17:23:28 by roversch          #+#    #+#             */
-/*   Updated: 2025/12/19 13:55:04 by roversch         ###   ########.fr       */
+/*   Created: 2025/12/23 14:02:36 by roversch          #+#    #+#             */
+/*   Updated: 2025/12/23 15:19:39 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Harl.hpp"
 
-# include "Weapon.hpp"
-
-class	HumanB
+int	main(void)
 {
-	private:
-		Weapon		*weapon;
-		std::string	name;
+	Harl	harl;
 
-	public:
-		HumanB(std::string name);
-		~HumanB(void);
-
-		void	setWeapon(Weapon &weapon);
-		void	attack(void);
-};
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
+	harl.complain("IDK");
+	harl.complain("DEBUGDEBUG");
+	harl.complain("DEBUGINFO");
+	harl.complain("");
+	harl.complain(" ");
+}

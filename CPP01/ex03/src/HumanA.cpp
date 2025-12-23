@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 17:23:28 by roversch          #+#    #+#             */
-/*   Updated: 2025/12/19 13:55:04 by roversch         ###   ########.fr       */
+/*   Created: 2025/12/17 17:23:11 by roversch          #+#    #+#             */
+/*   Updated: 2025/12/23 16:33:54 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "HumanA.hpp"
 
-# include "Weapon.hpp"
-
-class	HumanB
+HumanA::HumanA(std::string name, Weapon &weapon)
 {
-	private:
-		Weapon		*weapon;
-		std::string	name;
+	this->name = name;
+	this->weapon = &weapon;
+}
 
-	public:
-		HumanB(std::string name);
-		~HumanB(void);
+HumanA::~HumanA(void) {}
 
-		void	setWeapon(Weapon &weapon);
-		void	attack(void);
-};
+void	HumanA::attack(void)
+{
+	std::cout << name << " attacks with their " << weapon->getType() << std::endl;
+}

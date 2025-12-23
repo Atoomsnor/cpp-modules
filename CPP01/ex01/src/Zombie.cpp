@@ -6,15 +6,13 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 16:10:43 by roversch          #+#    #+#             */
-/*   Updated: 2025/12/17 16:19:04 by roversch         ###   ########.fr       */
+/*   Updated: 2025/12/23 16:30:14 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(void)
-{
-}
+Zombie::Zombie() {}
 
 Zombie::~Zombie(void)
 {

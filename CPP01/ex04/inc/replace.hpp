@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 17:23:28 by roversch          #+#    #+#             */
-/*   Updated: 2025/12/19 13:55:04 by roversch         ###   ########.fr       */
+/*   Created: 2025/12/19 14:11:23 by roversch          #+#    #+#             */
+/*   Updated: 2025/12/23 16:29:16 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-# include "Weapon.hpp"
+# include <iostream>
+# include <fstream>
 
-class	HumanB
-{
-	private:
-		Weapon		*weapon;
-		std::string	name;
-
-	public:
-		HumanB(std::string name);
-		~HumanB(void);
-
-		void	setWeapon(Weapon &weapon);
-		void	attack(void);
-};
+void	replace(std::string s1, std::string s2,
+				std::ifstream &infile, std::ofstream &outfile);

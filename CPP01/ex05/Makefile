@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: roversch <roversch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/12/17 17:23:47 by roversch          #+#    #+#              #
-#    Updated: 2025/12/23 16:33:11 by roversch         ###   ########.fr        #
+#    Created: 2025/12/23 14:02:13 by roversch          #+#    #+#              #
+#    Updated: 2025/12/23 14:29:31 by roversch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= combat
+NAME		= harl
 
 CPP			= c++
 CPPFLAGS	= -Wall -Wextra -Werror
@@ -18,7 +18,7 @@ DEPFLAGS	= -MMD
 INCLUDES	= -I ./inc
 
 SRC_DIR		= src
-SRC			= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRC			= main.cpp Harl.cpp
 
 OBJ_DIR		= obj
 OBJ			= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
