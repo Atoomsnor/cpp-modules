@@ -1,28 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/17 17:23:26 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/06 17:57:36 by roversch         ###   ########.fr       */
+/*   Created: 2026/01/06 15:33:17 by roversch          #+#    #+#             */
+/*   Updated: 2026/01/06 15:33:29 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-# include "Weapon.hpp"
-
-class	HumanA
-{
-	private:
-		Weapon		&weapon;
-		std::string	name;
-
-	public:
-		HumanA(std::string name, Weapon &weapon);
-		~HumanA(void);
-
-		void	attack(void);
-};
