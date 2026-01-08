@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 15:32:11 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/08 17:10:55 by roversch         ###   ########.fr       */
+/*   Created: 2026/01/08 17:13:38 by roversch          #+#    #+#             */
+/*   Updated: 2026/01/08 18:11:09 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 int main( void )
 {
-	std::cout << "A:" << std::endl;
-	Fixed a; //only calls default constructor
-	std::cout << "B:" << std::endl;
-	Fixed b( a ); //cals copy from a to b
-	std::cout << "C:" << std::endl;
-	Fixed c; //only calls default
-	std::cout << "Overload:" << std::endl;
-	c = b; //overloads b into c
-	std::cout << "Getters:" << std::endl;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	Fixed a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
+	a = Fixed( 1234.4321f );
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 	return 0;
 }
