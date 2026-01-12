@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 14:02:48 by roversch          #+#    #+#             */
-/*   Updated: 2025/12/23 15:22:12 by roversch         ###   ########.fr       */
+/*   Updated: 2026/01/12 12:20:58 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Harl::~Harl(void) {}
 
 int	Harl::findlevel(std::string level)
 {
-	static const char *levels[4] =
+	static const std::string levels[4] =
 	{
 		"DEBUG",
 		"INFO",
