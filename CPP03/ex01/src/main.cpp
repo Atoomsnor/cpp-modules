@@ -6,32 +6,32 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:02:55 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/13 16:57:33 by roversch         ###   ########.fr       */
+/*   Updated: 2026/01/15 17:01:51 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-int	main(void) {
-	ScavTrap	a("Scavy");	
+int	main(void)
+{
+	ClapTrap	a("Clapy");
 
-	std::cout << "\033[0;35m" << "--A--" << "\033[0m" << std::endl;
-	a.guardGate();
+	std::cout << PURPLE << "-----" << std::endl;
 	a.attack("boop");
 	a.beRepaired(10);
-	a.takeDamage(90);
+	a.takeDamage(150);
 	a.attack("beep");
-	std::cout << "\033[0;35 m" << "-----" << "\033[0m" << std::endl;
+	std::cout << "-----" << RESET << std::endl;
 
-	ClapTrap	b("Clapy");
+	ScavTrap	b("Scavy");
 
-	std::cout << "\033[0;34m" << "--B--" << "\033[0m" << std::endl;
+	std::cout << PINK << "-----" << std::endl;
+	b.guardGate();
 	b.attack("boop");
 	b.beRepaired(10);
-	b.takeDamage(150);
+	b.takeDamage(90);
 	b.attack("beep");
-	std::cout << "\033[0;34 m" << "-----" << "\033[0m" << std::endl;
+	std::cout << "-----" << RESET << std::endl;
 
 	return (0);
 }

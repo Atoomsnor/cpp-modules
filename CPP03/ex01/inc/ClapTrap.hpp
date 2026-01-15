@@ -6,13 +6,17 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:03:10 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/13 14:22:37 by roversch         ###   ########.fr       */
+/*   Updated: 2026/01/15 17:02:05 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+
+#define PINK	"\033[0;35m"
+#define PURPLE	"\033[0;34m"
+#define RESET	"\033[0m"
 
 class	ClapTrap
 {

@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/12 18:02:55 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/15 17:02:51 by roversch         ###   ########.fr       */
+/*   Created: 2026/01/15 12:27:40 by roversch          #+#    #+#             */
+/*   Updated: 2026/01/15 16:43:52 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma	once
+
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-int	main()
+class	DiamondTrap : virtual public ScavTrap, virtual public FragTrap
 {
-	ClapTrap	a("Clapy");
+	private:
+		std::string	name;
 
-	std::cout << PURPLE << "-----" << std::endl;
-	a.attack("boop");
-	a.beRepaired(10);
-	a.takeDamage(150);
-	a.attack("beep");
-	std::cout << "-----" << RESET << std::endl;
-}
+	public:
+		DiamondTrap();
+		DiamondTrap(std::string name);
+		DiamondTrap(const DiamondTrap &rhs);
+		virtual ~DiamondTrap();
+
+		DiamondTrap&	operator=(const DiamondTrap &rhs);
+
+		void	attack(const std::string &target);
+		void	whoAmI();
+};

@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/12 18:02:55 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/15 17:02:51 by roversch         ###   ########.fr       */
+/*   Created: 2026/01/13 12:45:47 by roversch          #+#    #+#             */
+/*   Updated: 2026/01/15 16:24:10 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include "ClapTrap.hpp"
 
-int	main()
+class	ScavTrap : virtual public ClapTrap
 {
-	ClapTrap	a("Clapy");
+	private:
 
-	std::cout << PURPLE << "-----" << std::endl;
-	a.attack("boop");
-	a.beRepaired(10);
-	a.takeDamage(150);
-	a.attack("beep");
-	std::cout << "-----" << RESET << std::endl;
-}
+	public:
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &rhs);
+		virtual	~ScavTrap();
+
+		ScavTrap&	operator=(const ScavTrap &rhs);
+
+		void	attack(const std::string &target);
+		void	guardGate();
+};
