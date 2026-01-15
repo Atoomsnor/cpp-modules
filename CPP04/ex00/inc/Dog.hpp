@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 12:27:40 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/15 17:38:46 by roversch         ###   ########.fr       */
+/*   Created: 2026/01/15 17:31:27 by roversch          #+#    #+#             */
+/*   Updated: 2026/01/15 17:33:34 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma	once
+#pragma once
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#include "Animal.hpp"
 
-class	DiamondTrap : public ScavTrap, public FragTrap
+class	Dog : public Animal
 {
 	private:
-		std::string	name;
-
+	
 	public:
-		DiamondTrap();
-		DiamondTrap(std::string name);
-		DiamondTrap(const DiamondTrap &rhs);
-		virtual ~DiamondTrap();
+		Dog();
+		Dog(const Dog &rhs);
+		~Dog();
 
-		DiamondTrap&	operator=(const DiamondTrap &rhs);
+		Dog&	operator=(const Dog &rhs);
 
-		void	whoAmI();
+		void	makeSound() const;
 };

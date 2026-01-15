@@ -6,11 +6,11 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 17:13:32 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/08 18:18:53 by roversch         ###   ########.fr       */
+/*   Updated: 2026/01/15 17:11:39 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp" //prob change back
+#include "Fixed.hpp"
 
 Fixed::Fixed() : rawBits(0)
 {
@@ -41,14 +41,14 @@ Fixed	&Fixed::operator=(const Fixed &rhs)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return (this->rawBits);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
 	this->rawBits = raw;
-	std::cout << "setRawBits member function called" << std::endl;
+	// std::cout << "setRawBits member function called" << std::endl;
 }
 
 float	Fixed::toFloat(void) const

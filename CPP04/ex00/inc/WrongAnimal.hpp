@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 12:27:40 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/15 17:38:46 by roversch         ###   ########.fr       */
+/*   Created: 2026/01/15 18:24:09 by roversch          #+#    #+#             */
+/*   Updated: 2026/01/15 18:41:18 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma	once
+#pragma once
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#include <iostream>
 
-class	DiamondTrap : public ScavTrap, public FragTrap
+class	WrongAnimal
 {
-	private:
-		std::string	name;
+	protected:
+		std::string	type;
 
 	public:
-		DiamondTrap();
-		DiamondTrap(std::string name);
-		DiamondTrap(const DiamondTrap &rhs);
-		virtual ~DiamondTrap();
+		WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal(const WrongAnimal &rhs);
+		virtual ~WrongAnimal();
 
-		DiamondTrap&	operator=(const DiamondTrap &rhs);
+		WrongAnimal&	operator=(const WrongAnimal &rhs);
 
-		void	whoAmI();
+		void	makeSound() const;
+		std::string		getType() const;
 };
