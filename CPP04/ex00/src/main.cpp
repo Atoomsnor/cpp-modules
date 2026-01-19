@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 17:13:44 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/15 18:38:45 by roversch         ###   ########.fr       */
+/*   Updated: 2026/01/19 11:57:59 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,16 @@
 int	main()
 {
 	const Animal* meta = new Animal();
+	std::cout << "\n";
 	const Animal* j = new Dog();
+	std::cout << "\n";
 	const Animal* i = new Cat();
+	std::cout << "\n";
 	const WrongAnimal* beta = new WrongAnimal();
+	std::cout << "\n";
 	const WrongAnimal* k = new WrongCat();
 	
-	std::cout << PURPLE << "-----" << std::endl;
+	std::cout << "-----" << std::endl;
 	std::cout << meta->getType() << " " << std::endl;
 	meta->makeSound();
 	std::cout << j->getType() << " " << std::endl;
@@ -35,12 +39,16 @@ int	main()
 	beta->makeSound();
 	std::cout << k->getType() << " " << std::endl;
 	k->makeSound();
-	std::cout << "-----" << RESET << std::endl;
+	std::cout << "-----" << std::endl;
 
 	delete meta;
+	std::cout << "\n";
 	delete i;
+	std::cout << "\n";
 	delete j;
+	std::cout << "\n";
 	delete beta;
+	std::cout << "\n";
 	delete k;
 
 	return (0);

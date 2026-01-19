@@ -6,16 +6,13 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 17:13:38 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/15 18:26:49 by roversch         ###   ########.fr       */
+/*   Updated: 2026/01/19 11:57:52 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-
-#define PURPLE	"\033[0;34m"
-#define RESET	"\033[0m"
 
 class	Animal
 {
