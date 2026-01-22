@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 17:13:44 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/19 11:57:59 by roversch         ###   ########.fr       */
+/*   Updated: 2026/01/22 16:09:11 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,38 +18,38 @@
 
 int	main()
 {
-	const Animal* meta = new Animal();
+	const Animal* alpha = new Animal();
 	std::cout << "\n";
-	const Animal* j = new Dog();
+	const Animal* dog_a = new Dog();
 	std::cout << "\n";
-	const Animal* i = new Cat();
+	const Animal* cat_a = new Cat();
 	std::cout << "\n";
 	const WrongAnimal* beta = new WrongAnimal();
 	std::cout << "\n";
-	const WrongAnimal* k = new WrongCat();
+	const WrongAnimal* cat_b = new WrongCat();
 	
 	std::cout << "-----" << std::endl;
-	std::cout << meta->getType() << " " << std::endl;
-	meta->makeSound();
-	std::cout << j->getType() << " " << std::endl;
-	j->makeSound();
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	std::cout << alpha->getType() << " " << std::endl;
+	alpha->makeSound();
+	std::cout << dog_a->getType() << " " << std::endl;
+	dog_a->makeSound();
+	std::cout << cat_a->getType() << " " << std::endl;
+	cat_a->makeSound();
 	std::cout << beta->getType() << " " << std::endl;
 	beta->makeSound();
-	std::cout << k->getType() << " " << std::endl;
-	k->makeSound();
+	std::cout << cat_b->getType() << " " << std::endl;
+	cat_b->makeSound();
 	std::cout << "-----" << std::endl;
 
-	delete meta;
+	delete alpha;
 	std::cout << "\n";
-	delete i;
+	delete cat_a;
 	std::cout << "\n";
-	delete j;
+	delete dog_a;
 	std::cout << "\n";
 	delete beta;
 	std::cout << "\n";
-	delete k;
+	delete cat_b;
 
 	return (0);
 }
