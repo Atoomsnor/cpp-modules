@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/15 17:31:27 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/22 13:33:14 by roversch         ###   ########.fr       */
+/*   Created: 2026/01/15 18:31:47 by roversch          #+#    #+#             */
+/*   Updated: 2026/01/15 18:33:31 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-class	Dog : public Animal
+class	WrongCat : public WrongAnimal
 {
 	private:
-		Brain	*brain;
 
 	public:
-		Dog();
-		Dog(const Dog &rhs);
-		~Dog();
+		WrongCat();
+		WrongCat(const WrongCat &rhs);
+		~WrongCat();
 
-		Dog&	operator=(const Dog &rhs);
+		WrongCat&	operator=(const WrongCat &rhs);
 
-		void		makeSound() const;
-		void		setIdea(int index, std::string idea);
-		std::string	getIdea(int index) const;
+		void	makeSound() const;
 };

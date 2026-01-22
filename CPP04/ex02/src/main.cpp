@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 17:13:44 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/22 14:43:52 by roversch         ###   ########.fr       */
+/*   Updated: 2026/01/22 16:05:49 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 int	main()
 {
+	// Animal animal; // abstract showcase
+
 	std::cout << "------- CREATE ANIMAL ARRAY -------" << std::endl;
 	Animal* animals[4]
 	{
