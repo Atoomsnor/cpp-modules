@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 12:45:47 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/15 16:24:10 by roversch         ###   ########.fr       */
+/*   Updated: 2026/01/27 17:34:38 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@
 
 class	ScavTrap : virtual public ClapTrap
 {
-	private:
+	protected:
+		static const unsigned int init_val_hp = 100;
+		static const unsigned int init_val_ep = 50;
+		static const unsigned int init_val_ad = 20;
 
 	public:
 		ScavTrap();

@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 12:27:44 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/15 17:38:50 by roversch         ###   ########.fr       */
+/*   Updated: 2026/01/27 17:40:01 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ DiamondTrap::DiamondTrap()
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 	this->name = "DiamondTrap";
 	ClapTrap::name = "DiamondTrap_clap_name";
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 30;
+	hitPoints = FragTrap::init_val_hp;
+	energyPoints = ScavTrap::init_val_ep;
+	attackDamage = FragTrap::init_val_ad;
+	std::cout << hitPoints << " " << energyPoints << " " << attackDamage << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name)
@@ -27,9 +28,10 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), Fra
 	std::cout << "DiamondTrap init constructor called" << std::endl;
 	this->name = name;
 	ClapTrap::name = name + "_clap_name";
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = 50;
-	this->attackDamage = 30;
+	hitPoints = FragTrap::init_val_hp;
+	energyPoints = ScavTrap::init_val_ep;
+	attackDamage = FragTrap::init_val_ad;
+	std::cout << hitPoints << " " << energyPoints << " " << attackDamage << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &rhs)
