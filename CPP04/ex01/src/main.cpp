@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 17:13:44 by roversch          #+#    #+#             */
-/*   Updated: 2026/01/22 16:13:04 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/06 13:07:42 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int	main()
 
 	std::cout << "\n----- CAT DELETE -----" << std::endl;
 	delete cat;
-	delete fluff;
 	delete spook;
+	delete fluff;
 
 	return 0;
 }
