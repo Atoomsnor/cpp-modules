@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:03:03 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 15:13:14 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/10 17:51:07 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	Bureaucrat::decrementGrade()
 	this->grade++;
 }
 
-void	Bureaucrat::signForm(Form& rhs)
+void	Bureaucrat::signForm(AForm& rhs)
 {
 	try
 	{
@@ -77,6 +77,19 @@ void	Bureaucrat::signForm(Form& rhs)
 		return ;
 	}
 	std::cout << this->name << " signed " << rhs.getName() << std::endl;
+}
+
+void	Bureaucrat::executeForm(AForm const &form) const
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
 }
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()

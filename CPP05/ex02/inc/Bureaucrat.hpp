@@ -6,21 +6,21 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:02:17 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 15:19:49 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/10 18:15:21 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 #define PURPLE	"\033[0;34m"
 #define GREEN	"\033[0;32m"
 #define PINK	"\033[0;35m"
 #define RESET	"\033[0m"
 
-class	Form;
+class	AForm;
 
 class	Bureaucrat
 {
@@ -41,7 +41,8 @@ class	Bureaucrat
 		//Member functions
 		void	incrementGrade();
 		void	decrementGrade();
-		void	signForm(Form &rhs);
+		void	signForm(AForm &rhs);
+		void	executeForm(AForm const &form) const;
 
 		//Setters & Getters
 		const std::string&	getName() const;

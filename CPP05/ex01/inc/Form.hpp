@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:18:42 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 13:19:31 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/10 16:53:11 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include "Bureaucrat.hpp"
 #include <iostream>
+
+class	Bureaucrat;
 
 class	Form
 {
@@ -26,7 +28,7 @@ class	Form
 	public:
 		//Constructor(s)
 		Form();
-		Form(const std::string name, const int signGrade, const int execGrade);
+		Form(const std::string& name, const int signGrade, const int execGrade);
 
 		//Rule of 3
 		Form(const Form& rhs);
