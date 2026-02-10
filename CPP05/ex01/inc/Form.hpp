@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 14:02:17 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 11:29:05 by roversch         ###   ########.fr       */
+/*   Created: 2026/02/10 11:18:42 by roversch          #+#    #+#             */
+/*   Updated: 2026/02/10 11:34:30 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,28 @@
 
 #include <iostream>
 
-#define PURPLE	"\033[0;34m"
-#define GREEN	"\033[0;32m"
-#define PINK	"\033[0;35m"
-#define RESET	"\033[0m"
-
-class	Bureaucrat
+class	Form
 {
 	private:
 		const std::string	name;
-		int					grade;
+		bool				isSigned;
+		const int			signGrade;
+		const int			execGrade;
 
 	public:
-		//Constructors
-		Bureaucrat();
-		Bureaucrat(std::string name, int grade);
+		//Constructor(s)
+		Form();
 
 		//Rule of 3
-		Bureaucrat(const Bureaucrat& rhs);
-		Bureaucrat&	operator=(const Bureaucrat& rhs);
-		~Bureaucrat();
-
-		//Value manipulators
-		void	incrementGrade();
-		void	decrementGrade();
+		Form(const Form& other);
+		Form&	operator=(const Form& other);
+		~Form();
 
 		//Setters & Getters
 		const std::string&	getName() const;
-		int					getGrade() const;
+		bool				getIsSigned() const;
+		int					getSignGrade() const;
+		int					getExecGrade() const;
 
 		//Exceptions
 		class	GradeTooHighException : public std::exception
@@ -52,8 +46,7 @@ class	Bureaucrat
 		class	GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw();
+				virtual const char * what() const throw();
 		};
 };
-//Offstream function
-std::ostream&	operator<<(std::ostream& os, const Bureaucrat& obj);
+std::ostream&	operator<<(std::ostream& os, const Form& obj);

@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:02:17 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 11:29:05 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/10 11:28:58 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class	Bureaucrat
 		int					grade;
 
 	public:
-		//Constructors
+		//Constructor(s)
 		Bureaucrat();
 		Bureaucrat(std::string name, int grade);
 
