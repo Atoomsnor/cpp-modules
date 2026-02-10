@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:02:17 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 11:28:58 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/10 13:19:22 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,17 @@ class	Bureaucrat
 	public:
 		//Constructor(s)
 		Bureaucrat();
-		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const std::string name, int grade);
 
 		//Rule of 3
 		Bureaucrat(const Bureaucrat& rhs);
 		Bureaucrat&	operator=(const Bureaucrat& rhs);
 		~Bureaucrat();
 
-		//Value manipulators
+		//Member functions
 		void	incrementGrade();
 		void	decrementGrade();
+		void	signForm();
 
 		//Setters & Getters
 		const std::string&	getName() const;

@@ -6,12 +6,13 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:18:42 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 11:34:30 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/10 13:19:31 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include "Bureaucrat.hpp"
 #include <iostream>
 
 class	Form
@@ -25,14 +26,18 @@ class	Form
 	public:
 		//Constructor(s)
 		Form();
+		Form(const std::string name, const int signGrade, const int execGrade);
 
 		//Rule of 3
-		Form(const Form& other);
-		Form&	operator=(const Form& other);
+		Form(const Form& rhs);
+		Form&	operator=(const Form& rhs);
 		~Form();
 
+		//Member functions
+		void	beSigned(Bureaucrat& obj);
+
 		//Setters & Getters
-		const std::string&	getName() const;
+		const std::string&	getName() const; //maybe no &?
 		bool				getIsSigned() const;
 		int					getSignGrade() const;
 		int					getExecGrade() const;
