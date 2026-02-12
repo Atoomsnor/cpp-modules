@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:02:17 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 18:15:21 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/12 16:50:27 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #define PURPLE	"\033[0;34m"
 #define GREEN	"\033[0;32m"
 #define PINK	"\033[0;35m"
+#define RED		"\033[0;31m"
 #define RESET	"\033[0m"
 
 class	AForm;

@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:18:42 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 17:57:05 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/12 17:23:27 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ class	AForm
 
 		//Member functions
 		virtual void	beSigned(Bureaucrat& obj);
-		virtual void	execute(Bureaucrat const& executor) const;
-		virtual void	executeForm() const = 0;
+		virtual void	execute(Bureaucrat const& executor) const = 0;
+		// virtual void	executeForm() const = 0;
 
 		//Setters & Getters
 		const std::string&	getName() const;

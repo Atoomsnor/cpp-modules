@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 17:07:28 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 18:24:18 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/12 17:25:35 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ class	ShrubberyCreationForm : public AForm
 		~ShrubberyCreationForm();
 
 		//Member functions
-		void	executeForm() const;
+		void	execute(Bureaucrat const& executor) const;
 };

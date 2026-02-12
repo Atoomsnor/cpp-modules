@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:03:03 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 17:51:07 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/12 16:47:01 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat& rhs) : name(rhs.name)
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& rhs)
 {
 	std::cout << "Bureaucrat copy assignment operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
 	this->grade = rhs.grade;
 	return (*this);
 }

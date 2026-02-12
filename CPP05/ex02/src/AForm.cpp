@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:18:36 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 17:55:47 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/12 17:20:37 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,13 @@ void	AForm::beSigned(Bureaucrat& obj)
 		throw GradeTooLowException();
 }
 
-void	AForm::execute(Bureaucrat const& executor) const
-{
-	if ((executor.getGrade() <= this->getExecGrade()) && this->getIsSigned() == true)
-		this->executeForm();
-	else
-		throw GradeTooLowException();
-}
+// void	AForm::execute(Bureaucrat const& executor) const
+// {
+// 	if ((executor.getGrade() <= this->getExecGrade()) && this->getIsSigned() == true)
+// 		this->executeForm();
+// 	else
+// 		throw GradeTooLowException();
+// }
 
 const std::string&	AForm::getName() const
 {
