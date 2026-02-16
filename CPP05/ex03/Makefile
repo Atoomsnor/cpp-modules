@@ -2,7 +2,7 @@
 # Basics                                                                       #
 ################################################################################
 
-NAME		= Intern
+NAME		= AForm
 CPP			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -MMD
 
@@ -14,7 +14,7 @@ INCLUDES	= -I ./inc
 
 SRC_DIR		= src
 SRC			= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
-				RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+				RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 
 OBJ_DIR		= obj
 OBJ			= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
