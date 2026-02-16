@@ -2,7 +2,7 @@
 # Basics                                                                       #
 ################################################################################
 
-NAME		= Types
+NAME		= Converter
 CPP			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -MMD
 
@@ -13,7 +13,7 @@ CPPFLAGS	= -Wall -Wextra -Werror -MMD
 INCLUDES	= -I ./inc
 
 SRC_DIR		= src
-SRC			= main.cpp
+SRC			= main.cpp ScalarConverter.cpp
 
 OBJ_DIR		= obj
 OBJ			= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
