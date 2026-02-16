@@ -2,7 +2,7 @@
 # Basics                                                                       #
 ################################################################################
 
-NAME		= AForm
+NAME		= Intern
 CPP			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -MMD
 
