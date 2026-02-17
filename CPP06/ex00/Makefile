@@ -4,7 +4,7 @@
 
 NAME		= Converter
 CPP			= c++
-CPPFLAGS	= -Wall -Wextra -Werror -MMD
+CPPFLAGS	= -Wall -Wextra -Werror -MMD -std=c++11
 
 ################################################################################
 # Source files                                                                 #
