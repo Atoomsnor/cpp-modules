@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:18:42 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 16:53:11 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:24:00 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ class	Form
 		class	GradeTooHighException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw();
+				virtual const char* what() const noexcept;
 		};
 		class	GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char * what() const throw();
+				virtual const char * what() const noexcept;
 		};
 };
 std::ostream&	operator<<(std::ostream& os, const Form& obj);

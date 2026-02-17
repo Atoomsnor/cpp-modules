@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 19:05:41 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/16 13:23:11 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:24:00 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ AForm*	Intern::makePresidential(std::string target)
 	return (new PresidentialPardonForm(target));
 }
 
-const char*	Intern::NonExistingForm::what() const throw()
+const char*	Intern::NonExistingForm::what() const noexcept
 {
 	return ("Non existing form");
 }

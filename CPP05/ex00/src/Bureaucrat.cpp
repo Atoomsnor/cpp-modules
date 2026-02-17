@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:03:03 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/09 15:51:48 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:24:00 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& rhs)
 	return (*this);
 }
 
-const char*	Bureaucrat::GradeTooHighException::what() const throw()
+const char*	Bureaucrat::GradeTooHighException::what() const noexcept
 {
 	return ("Grade too high");
 }
 
-const char*	Bureaucrat::GradeTooLowException::what() const throw()
+const char*	Bureaucrat::GradeTooLowException::what() const noexcept
 {
 	return ("Grade too low");
 }

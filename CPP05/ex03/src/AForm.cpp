@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 11:18:36 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/16 13:22:06 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:24:00 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,12 @@ int	AForm::getExecGrade() const
 	return (this->execGrade);
 }
 
-const char*	AForm::GradeTooHighException::what() const throw()
+const char*	AForm::GradeTooHighException::what() const noexcept
 {
 	return ("Grade too high");
 }
 
-const char*	AForm::GradeTooLowException::what() const throw()
+const char*	AForm::GradeTooLowException::what() const noexcept
 {
 	return ("Grade too low");
 }

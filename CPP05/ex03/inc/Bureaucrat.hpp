@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:02:17 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/12 16:50:27 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:24:00 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ class	Bureaucrat
 		class	GradeTooHighException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw();
+				virtual const char* what() const noexcept;
 		};
 		class	GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw();
+				virtual const char* what() const noexcept;
 		};
 };
 //Offstream function

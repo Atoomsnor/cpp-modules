@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 19:05:33 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/16 13:22:45 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:24:00 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class	Intern
 		class	NonExistingForm : public std::exception
 		{
 			public:
-				virtual const char* what() const throw();
+				virtual const char* what() const noexcept;
 		};
 
 };

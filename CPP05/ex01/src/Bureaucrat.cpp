@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:03:03 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/10 15:13:14 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:24:00 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,12 @@ void	Bureaucrat::signForm(Form& rhs)
 	std::cout << this->name << " signed " << rhs.getName() << std::endl;
 }
 
-const char*	Bureaucrat::GradeTooHighException::what() const throw()
+const char*	Bureaucrat::GradeTooHighException::what() const noexcept
 {
 	return ("Grade too high");
 }
 
-const char*	Bureaucrat::GradeTooLowException::what() const throw()
+const char*	Bureaucrat::GradeTooLowException::what() const noexcept
 {
 	return ("Grade too low");
 }

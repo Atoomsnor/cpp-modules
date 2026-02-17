@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 17:07:53 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/12 17:26:38 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:24:00 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ class	PresidentialPardonForm : public AForm
 		~PresidentialPardonForm();
 
 		//Member functions
-		void	execute(Bureaucrat const& executor) const;
+		void	execute(Bureaucrat const& executor) const override;
 };

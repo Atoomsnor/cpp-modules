@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 13:27:59 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/16 17:35:47 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/17 11:21:41 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class	ScalarConverter
 		static bool		isDouble(std::string value);
 
 		static void		convertChar(char value);
-		static void		convertint(int value);
+		static void		convertInt(int value);
 		static void		convertFloat(float value);
 		static void		convertDouble(double value);
 
