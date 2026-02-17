@@ -6,13 +6,18 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 13:27:59 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/17 11:21:41 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/17 16:42:34 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+
+#define PURPLE	"\033[0;34m"
+#define GREEN	"\033[0;32m"
+#define PINK	"\033[0;35m"
+#define RESET	"\033[0m"
 
 enum	e_type
 {

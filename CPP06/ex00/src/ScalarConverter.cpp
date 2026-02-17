@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 13:42:26 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/17 14:21:07 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/17 16:43:04 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <cctype>
 #include <regex>
 #include <iomanip>
-// #include <limits>
+#include <cmath>
 
 ScalarConverter::ScalarConverter()
 {
@@ -62,7 +62,8 @@ bool	ScalarConverter::isFloat(std::string value)
 {
 	std::regex	floatRegex("^[+-]?[0-9]*+[.][0-9]+[f]$");
 
-	if (std::regex_match(value, floatRegex) == true)
+	if (std::regex_match(value, floatRegex) == true || value == "-inff"
+			|| value == "+inff" || value == "nanf")
 		return (true);
 	return (false);
 }
@@ -71,7 +72,8 @@ bool	ScalarConverter::isDouble(std::string value)
 {
 	std::regex	doubleRegex("^[+-]?[0-9]*+[.][0-9]+$");
 
-	if (std::regex_match(value, doubleRegex) == true)
+	if (std::regex_match(value, doubleRegex) == true || value == "-inf"
+			|| value == "+inf" || value == "nan")
 		return (true);
 	return (false);
 }
@@ -113,24 +115,50 @@ void	ScalarConverter::convertInt(int value)
 
 void	ScalarConverter::convertFloat(float value)
 {
-	if ((value >= 0.0 && value <= 127.0) && std::isprint(static_cast<char>(value)))
-		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
+	if (std::isfinite(value) == false)
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: " << value << "f" << std::endl;
+		std::cout << "double: " << static_cast<double>(value) << std::endl;
+	}
 	else
-		std::cout << "char: Non displayable" << std::endl;
-	std::cout << "int: " << static_cast<int>(value) << std::endl;
-	std::cout << "float: " << value << "f" << std::endl;
-	std::cout << "double: " << static_cast<double>(value) << std::endl;
+	{
+		if ((value >= 0.0 && value <= 127.0) && std::isprint(static_cast<char>(value)))
+			std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
+		else
+			std::cout << "char: Non displayable" << std::endl;
+		if (value > -2147483648.0 && value < 2147483647.0)
+			std::cout << "int: " << static_cast<int>(value) << std::endl;
+		else
+			std::cout << "int: Non displayable" << std::endl;
+		std::cout << "float: " << value << "f" << std::endl;
+		std::cout << "double: " << static_cast<double>(value) << std::endl;
+	}
 }
 
 void	ScalarConverter::convertDouble(double value)
 {
-	if ((value >= 0.0 && value <= 127.0) && std::isprint(static_cast<char>(value)))
-		std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
+	if (std::isfinite(value) == false)
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
+		std::cout << "double: " << value << std::endl;
+	}
 	else
-		std::cout << "char: Non displayable" << std::endl;
-	std::cout << "int: " << static_cast<int>(value) << std::endl;
-	std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
-	std::cout << "double: " << value << std::endl;
+	{
+		if ((value >= 0.0 && value <= 127.0) && std::isprint(static_cast<char>(value)))
+			std::cout << "char: '" << static_cast<char>(value) << "'" << std::endl;
+		else
+			std::cout << "char: Non displayable" << std::endl;
+		if (value > -2147483648.0 && value < 2147483647.0)
+			std::cout << "int: " << static_cast<int>(value) << std::endl;
+		else
+			std::cout << "int: Non displayable" << std::endl;
+		std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
+		std::cout << "double: " << value << std::endl;
+	}
 }
 
 void	ScalarConverter::convert(std::string value)
@@ -138,26 +166,33 @@ void	ScalarConverter::convert(std::string value)
 	e_type	type = setType(value);
 
 	std::cout << std::setprecision(1) << std::fixed;
-	switch (type) //prob put in try-block
+	try
 	{
-		case	eChar:
-			std::cout << "char type" << std::endl;
-			convertChar(value[1]);
-			break;
-		case	eInt:
-			std::cout << "int type" << std::endl;
-			convertInt(std::stoi(value));
-			break;
-		case	eFloat:
-			std::cout << "float type" << std::endl;
-			convertFloat(std::stof(value));
-			break;
-		case	eDouble:
-			std::cout << "double type" << std::endl;
-			convertDouble(std::stod(value));
-			break;
-		default:
-			std::cout << "invalid type" << std::endl;
-			break;
+		switch (type)
+		{
+			case	eChar:
+				std::cout << "char type" << std::endl;
+				convertChar(value[1]);
+				break;
+			case	eInt:
+				std::cout << "int type" << std::endl;
+				convertInt(std::stoi(value));
+				break;
+			case	eFloat:
+				std::cout << "float type" << std::endl;
+				convertFloat(std::stof(value));
+				break;
+			case	eDouble:
+				std::cout << "double type" << std::endl;
+				convertDouble(std::stod(value));
+				break;
+			case	eUnknown:
+				std::cout << "invalid type" << std::endl;
+				break;
+		}
+	}
+	catch(const	std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
 	}
 }

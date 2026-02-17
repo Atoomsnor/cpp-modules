@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 13:27:09 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/16 16:49:57 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/17 16:41:50 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,9 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 
+	if (static_cast<std::string>(argv[1]) == "test")
+	{
+		
+	}
 	ScalarConverter::convert(argv[1]);
 }
