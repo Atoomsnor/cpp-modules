@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 13:42:26 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/19 14:03:54 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/19 20:23:08 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,7 @@ void	ScalarConverter::convert(std::string value)
 	e_type	type = findType(value);
 
 	std::cout << std::setprecision(1) << std::fixed;
+
 	try
 	{
 		switch (type)
@@ -173,4 +174,5 @@ void	ScalarConverter::convert(std::string value)
 	{
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
+	std::cout << "\n"; // To make prints prettier
 }
