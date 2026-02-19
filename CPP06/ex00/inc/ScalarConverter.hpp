@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 13:27:59 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/17 16:42:34 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/19 13:48:07 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include <iostream>
 
+#define	MAX_INT	2147483647.0
+#define	MIN_INT	-2147483649.0
 #define PURPLE	"\033[0;34m"
 #define GREEN	"\033[0;32m"
 #define PINK	"\033[0;35m"
@@ -28,11 +30,14 @@ enum	e_type
 	eUnknown,
 };
 
-class	ScalarConverter
+class ScalarConverter
 {
 	private:
-		//Member functions
-		static e_type	setType(std::string value);
+		// Prevent instantiation / Rule of 0
+		ScalarConverter() = delete;
+
+		// Member functions
+		static e_type	findType(std::string value);
 
 		static bool		isChar(std::string value);
 		static bool		isInt(std::string value);
@@ -45,14 +50,6 @@ class	ScalarConverter
 		static void		convertDouble(double value);
 
 	public:
-		//Constructor(s)
-		ScalarConverter();
-
-		//Rule of 3
-		ScalarConverter(const ScalarConverter& rhs);
-		ScalarConverter&	operator=(const ScalarConverter& rhs);
-		virtual ~ScalarConverter() = 0;
-
-		//Member functions
+		// Member function
 		static void	convert(std::string value);
 };

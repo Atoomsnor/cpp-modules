@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 13:27:09 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/17 16:41:50 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/19 15:35:40 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ int	main(int argc, char **argv)
 
 	if (static_cast<std::string>(argv[1]) == "test")
 	{
-		
+		std::cout << PURPLE << "Subject tests:" << std::endl;
+		ScalarConverter::convert("0");
+		ScalarConverter::convert("nan");
+		ScalarConverter::convert("42.0f");
 	}
 	ScalarConverter::convert(argv[1]);
 }
