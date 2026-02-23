@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 13:42:26 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/19 20:23:08 by roversch         ###   ########.fr       */
+/*   Updated: 2026/02/23 12:56:45 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,5 +174,4 @@ void	ScalarConverter::convert(std::string value)
 	{
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
-	std::cout << "\n"; // To make prints prettier
 }
