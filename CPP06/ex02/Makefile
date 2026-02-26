@@ -13,7 +13,7 @@ CPPFLAGS	= -Wall -Wextra -Werror -MMD -std=c++11
 INCLUDES	= -I ./inc
 
 SRC_DIR		= src
-SRC			= main.cpp Base.cpp # A.cpp B.cpp C.cpp #
+SRC			= main.cpp Base.cpp
 
 OBJ_DIR		= obj
 OBJ			= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
