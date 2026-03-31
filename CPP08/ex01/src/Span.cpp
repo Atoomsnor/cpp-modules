@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 12:57:39 by roversch          #+#    #+#             */
-/*   Updated: 2026/03/09 17:25:12 by roversch         ###   ########.fr       */
+/*   Updated: 2026/03/31 13:47:03 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,12 @@ void	Span::addNumber(int numb)
 	numbers.push_back(numb);
 }
 
-// void	Span::addRange()
+void	Span::addRange(std::vector<int> range)
+{
+	if (numbers.size() + range.size() > maxSize)
+		throw std::exception();
+	numbers.insert(numbers.end(), range.begin(), range.end());
+}
 
 int	Span::shortestSpan() const
 {

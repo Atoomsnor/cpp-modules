@@ -6,11 +6,15 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/09 12:57:52 by roversch          #+#    #+#             */
-/*   Updated: 2026/03/09 13:24:59 by roversch         ###   ########.fr       */
+/*   Updated: 2026/03/31 13:57:46 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
+#define PURPLE	"\033[0;34m"
+#define GREEN	"\033[0;32m"
+#define PINK	"\033[0;35m"
 
 #include <iostream>
 #include <vector>
@@ -32,6 +36,7 @@ class	Span
 		~Span();
 
 		void	addNumber(int numb);
+		void	addRange(std::vector<int> range);
 		int		shortestSpan() const;
 		int		longestSpan() const;
 		void	print() const;
