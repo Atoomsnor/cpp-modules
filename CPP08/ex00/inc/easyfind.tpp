@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 17:07:30 by roversch          #+#    #+#             */
-/*   Updated: 2026/02/26 18:39:52 by roversch         ###   ########.fr       */
+/*   Updated: 2026/03/31 12:49:22 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 #include <iostream>
 
 template <typename T>
-void	easyfind(T& arr, int toFind)
+void easyfind(const T& arr, int toFind)
 {
-	typename T::iterator it;
-	
+	typename T::iterator	it;
+
 	it = std::find(arr.begin(), arr.end(), toFind);
-	
+
 	if (it == arr.end())
 		throw std::exception();
 	else
