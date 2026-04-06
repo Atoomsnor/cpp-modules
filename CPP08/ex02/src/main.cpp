@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 14:05:21 by roversch          #+#    #+#             */
-/*   Updated: 2026/04/06 14:15:13 by roversch         ###   ########.fr       */
+/*   Updated: 2026/04/06 14:56:13 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main()
 
 	std::stack<int> s(mstack);
 
-	std::cout << GREEN << "List tests" << std::endl;
+	std::cout << GREEN << "List tests for comparison" << std::endl;
 	std::list<int> lst;
 
 	lst.push_back(5);
