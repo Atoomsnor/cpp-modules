@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/29 07:51:52 by roversch          #+#    #+#             */
-/*   Updated: 2026/06/30 13:25:24 by roversch         ###   ########.fr       */
+/*   Updated: 2026/06/30 15:13:50 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ BitcoinExchange::BitcoinExchange(const std::string& filename)
 
 void	BitcoinExchange::databaseToMap(const std::string& filename)
 {
-	std::ifstream file(filename); //erorcheck if it opened/exists
+	std::ifstream file(filename);
+	if (!file.is_open())
+		throw std::runtime_error("could not open file");
 
 	std::string line;
 	std::getline(file, line);
@@ -36,13 +38,33 @@ void	BitcoinExchange::databaseToMap(const std::string& filename)
 	}
 }
 
+static bool	isValidDate(std::string& date)
+{
+	int	year = std::stoi(date.substr(0, date.find('-')));
+	if (year < 2008 || year > 2026)
+		return (false);
+	int	month = std::stoi(date.substr(date.find('-') + 1));
+	int	day = std::stoi(date.substr(date.find('-') + 1));
+	// int	day;
+
+
+
+	std::cout << "date: " << date << " year: " << year << " month: " << month << " day: " << day << std::endl;
+	return (true);
+}
+
 bool	BitcoinExchange::getAmount(const std::string& line, std::string& date, float& amount) const
 {
 	std::size_t pipe = line.find('|');
 	if (pipe == std::string::npos)
 		return (false);
+
 	date = line.substr(0, pipe);
 	date = date.substr(0, date.find_last_not_of(" \t") + 1);
+
+	if (isValidDate(date) == false)
+		return (false);
+
 	amount = std::stof(line.substr(pipe + 1));
 	return (true);
 }
@@ -60,6 +82,8 @@ float	BitcoinExchange::getRate(const std::string& date) const
 void	BitcoinExchange::processInput(const std::string& filename) const
 {
 	std::ifstream	file(filename);
+	if (!file.is_open())
+		throw std::runtime_error("could not open file");
 	std::string		line;
 
 	std::getline(file, line);
