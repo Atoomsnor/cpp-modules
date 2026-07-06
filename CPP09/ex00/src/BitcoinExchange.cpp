@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/29 07:51:52 by roversch          #+#    #+#             */
-/*   Updated: 2026/07/02 15:22:04 by roversch         ###   ########.fr       */
+/*   Updated: 2026/07/06 13:41:39 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,20 @@
 #include <iostream>
 #include <fstream>
 
+BitcoinExchange::BitcoinExchange() {}
 
 BitcoinExchange::BitcoinExchange(const std::string& filename)
 {
 	databaseToMap(filename);
 }
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange& other)
-	: csvDB(other.csvDB)
-{
-}
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& rhs) : csvDB(rhs.csvDB) {}
 
-BitcoinExchange&	BitcoinExchange::operator=(const BitcoinExchange& other)
+BitcoinExchange&	BitcoinExchange::operator=(const BitcoinExchange& rhs)
 {
-	if (this != &other)
-		csvDB = other.csvDB;
+	if (this != &rhs)
+		this->csvDB = rhs.csvDB;
 	return (*this);
-}
-
-BitcoinExchange::~BitcoinExchange()
-{
 }
 
 void	BitcoinExchange::databaseToMap(const std::string& filename)
@@ -67,7 +61,7 @@ static bool	isValidDate(std::string& date)
 		day = std::stoi(date.substr(date.rfind('-') + 1));
 	} catch (...) { return (false); }
 
-	if (year < 0 || year > 2026)
+	if (year < 2008 || year > 2026)
 		return (false);
 	if (month < 1 || month > 12)
 		return (false);
@@ -111,8 +105,10 @@ bool	BitcoinExchange::validateInput(const std::string& line, std::string& date, 
 	start = valueStr.find_first_not_of(" \t");
 	if (start == std::string::npos)
 		return (false);
-	try { value = std::stof(valueStr.substr(start)); }
-	catch (...) { return (false); }
+
+	try { // stof catch
+		value = std::stof(valueStr.substr(start));
+	} catch (...) { return (false); }
 	return (true);
 }
 
@@ -121,7 +117,7 @@ float	BitcoinExchange::getRate(const std::string& date) const
 	std::map<std::string, float>::const_iterator it = csvDB.upper_bound(date);
 
 	if (it == csvDB.begin())
-		throw std::runtime_error("Date too early => ");
+		throw std::runtime_error("Date too early");
 	--it;
 	return (it->second);
 }
@@ -130,7 +126,7 @@ void	BitcoinExchange::parseInput(const std::string& filename) const
 {
 	std::ifstream	file(filename);
 	if (!file.is_open())
-		throw std::runtime_error("could not open file");
+		throw std::runtime_error("Could not open file");
 	std::string		line;
 
 	std::getline(file, line);
@@ -165,7 +161,9 @@ void	BitcoinExchange::parseInput(const std::string& filename) const
 		}
 		catch (const std::exception& e)
 		{
-			std::cerr << "Error: " << e.what() << date << std::endl;
+			std::cerr << "Error: " << e.what() << std::endl;
 		}
 	}
 }
+
+BitcoinExchange::~BitcoinExchange() {}
