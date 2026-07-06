@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/29 07:51:55 by roversch          #+#    #+#             */
-/*   Updated: 2026/07/02 10:58:49 by roversch         ###   ########.fr       */
+/*   Updated: 2026/07/06 13:35:15 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,14 @@ class	BitcoinExchange
 		void	databaseToMap(const std::string& filename);
 
 	public:
+		BitcoinExchange();
 		BitcoinExchange(const std::string& filename);
+
+		BitcoinExchange(const BitcoinExchange& other);
+		BitcoinExchange&	operator=(const BitcoinExchange& other);
+		~BitcoinExchange();
 
 		bool	validateInput(const std::string& line, std::string& date, float& amount) const;
 		float	getRate(const std::string& date) const;
 		void	parseInput(const std::string& filename) const;
-};	
+};

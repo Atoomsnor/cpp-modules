@@ -21,6 +21,22 @@ BitcoinExchange::BitcoinExchange(const std::string& filename)
 	databaseToMap(filename);
 }
 
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& other)
+	: csvDB(other.csvDB)
+{
+}
+
+BitcoinExchange&	BitcoinExchange::operator=(const BitcoinExchange& other)
+{
+	if (this != &other)
+		csvDB = other.csvDB;
+	return (*this);
+}
+
+BitcoinExchange::~BitcoinExchange()
+{
+}
+
 void	BitcoinExchange::databaseToMap(const std::string& filename)
 {
 	std::ifstream file(filename);
