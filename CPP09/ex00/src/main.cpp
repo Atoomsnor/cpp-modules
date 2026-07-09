@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/29 08:16:09 by roversch          #+#    #+#             */
-/*   Updated: 2026/07/02 10:56:07 by roversch         ###   ########.fr       */
+/*   Updated: 2026/07/06 18:22:22 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	try
 	{
 		BitcoinExchange	btc("data.csv");
-		btc.parseInput(argv[1]);
+		btc.excecute(argv[1]); //diff name
 	}
 	catch (const std::exception& e)
 	{

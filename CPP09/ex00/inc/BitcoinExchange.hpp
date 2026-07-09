@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/29 07:51:55 by roversch          #+#    #+#             */
-/*   Updated: 2026/07/06 13:35:15 by roversch         ###   ########.fr       */
+/*   Updated: 2026/07/06 18:22:35 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ class	BitcoinExchange
 		~BitcoinExchange();
 
 		bool	validateInput(const std::string& line, std::string& date, float& amount) const;
+		void	excecute(const std::string& filename) const;
 		float	getRate(const std::string& date) const;
-		void	parseInput(const std::string& filename) const;
 };

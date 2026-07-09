@@ -6,7 +6,7 @@
 /*   By: roversch <roversch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/29 07:51:52 by roversch          #+#    #+#             */
-/*   Updated: 2026/07/06 13:41:39 by roversch         ###   ########.fr       */
+/*   Updated: 2026/07/06 18:22:04 by roversch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ bool	BitcoinExchange::validateInput(const std::string& line, std::string& date, 
 		return (false);
 
 	date = line.substr(0, pipe);
-	std::size_t	start = date.find_first_not_of(" \t");
+	std::size_t	start = date.find_first_not_of(" \t"); // trim whitespaces before/after
 	std::size_t end = date.find_last_not_of(" \t");
 	if (start == std::string::npos)
 		return (false);
@@ -102,19 +102,19 @@ bool	BitcoinExchange::validateInput(const std::string& line, std::string& date, 
 		return (false);
 
 	std::string valueStr = line.substr(pipe + 1);
-	start = valueStr.find_first_not_of(" \t");
+	start = valueStr.find_first_not_of(" \t"); // trim whitespace before
 	if (start == std::string::npos)
 		return (false);
 
 	try { // stof catch
-		value = std::stof(valueStr.substr(start));
+		value = std::stof(valueStr.substr(start)); // trims whitespaces after
 	} catch (...) { return (false); }
 	return (true);
 }
 
 float	BitcoinExchange::getRate(const std::string& date) const
 {
-	std::map<std::string, float>::const_iterator it = csvDB.upper_bound(date);
+	std::map<std::string, float>::const_iterator it = csvDB.upper_bound(date); // upper_bound for equal or earlier date
 
 	if (it == csvDB.begin())
 		throw std::runtime_error("Date too early");
@@ -122,7 +122,7 @@ float	BitcoinExchange::getRate(const std::string& date) const
 	return (it->second);
 }
 
-void	BitcoinExchange::parseInput(const std::string& filename) const
+void	BitcoinExchange::excecute(const std::string& filename) const
 {
 	std::ifstream	file(filename);
 	if (!file.is_open())
@@ -131,7 +131,7 @@ void	BitcoinExchange::parseInput(const std::string& filename) const
 
 	std::getline(file, line);
 
-	while (std::getline(file, line))
+	while (std::getline(file, line)) // Main loop
 	{
 		std::string	date;
 		float		value;
@@ -156,7 +156,7 @@ void	BitcoinExchange::parseInput(const std::string& filename) const
 
 		try
 		{
-			float rate = getRate(date);
+			float rate = getRate(date); 
 			std::cout << date << " => " << value << " = " << value * rate << std::endl;
 		}
 		catch (const std::exception& e)
