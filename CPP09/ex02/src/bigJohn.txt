@@ -1,0 +1,11 @@
+Ford-Johnson (merge-insertion sort) tries to minimize the number of comparisons, 
+not runtime. Core idea: pair elements up, compare within pairs (cheap), 
+recursively sort the "winners" of each pair to build a small sorted backbone 
+(the main chain), then insert the "losers" back in — one at a time, 
+via binary search — but insert them in a clever order (Jacobsthal sequence) rather 
+than left-to-right. That ordering matters because inserting the loser with the 
+biggest already-known upper bound first shrinks the binary-search window for everyone 
+that comes after, so you never do more comparisons than necessary. 
+Jacobsthal numbers appear because the maximum useful binary-search window doubles-ish 
+every step (2^k vs 2^(k+1)-1 need the same number of comparisons), 
+so following that progression squeezes out every wasted comparison.
