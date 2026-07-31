@@ -2,7 +2,7 @@
 # Basics                                                                       #
 ################################################################################
 
-NAME		= RPN
+NAME		= PmergeMe
 CPP			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -MMD -std=c++20 -static
 
@@ -13,7 +13,7 @@ CPPFLAGS	= -Wall -Wextra -Werror -MMD -std=c++20 -static
 INCLUDES	= -I ./inc
 
 SRC_DIR		= src
-SRC			= RPN.cpp main.cpp
+SRC			= main.cpp PmergeMe.cpp
 
 OBJ_DIR		= obj
 OBJ			= $(SRC:%.cpp=$(OBJ_DIR)/%.o)

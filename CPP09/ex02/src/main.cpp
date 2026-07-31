@@ -1,7 +1,5 @@
 #include "PmergeMe.hpp"
 #include <iostream>
-#include <vector>
-#include <deque>
 #include <cstdlib>
 
 int	main(int argc, char **argv)
@@ -19,4 +17,11 @@ int	main(int argc, char **argv)
 		return (-1);
 	if (parseToCountainer(argc, argv, dequeContainer) == -1)
 		return (-1);
+
+	printContainer("Before vec: ", vectorContainer);
+	printContainer("Before deq: ", dequeContainer);
+	
+	runVector(vectorContainer);
+
+	printContainer("After vec: ", vectorContainer);
 }
