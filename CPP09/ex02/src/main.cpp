@@ -1,6 +1,7 @@
 #include "PmergeMe.hpp"
 #include <iostream>
-#include <cstdlib>
+#include <iomanip>
+#include <chrono>
 
 int	main(int argc, char **argv)
 {
@@ -10,18 +11,8 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 
-	std::vector<int>	vectorContainer;
-	std::deque<int>		dequeContainer;
-
-	if (parseToCountainer(argc, argv, vectorContainer) == -1)
-		return (-1);
-	if (parseToCountainer(argc, argv, dequeContainer) == -1)
-		return (-1);
-
-	printContainer("Before vec: ", vectorContainer);
-	printContainer("Before deq: ", dequeContainer);
+	if (PmergeMe(argc, argv) == -1)
+		return (1);
 	
-	runVector(vectorContainer);
-
-	printContainer("After vec: ", vectorContainer);
+	return (0);
 }

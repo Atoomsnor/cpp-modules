@@ -6,15 +6,15 @@
 #include <deque>
 
 template <typename Container>
-int	parseToCountainer(int argc, char *argv[], Container &out);
+int		parseToCountainer(int argc, char *argv[], Container &out);
 
 template <typename Container>
 void	printContainer(const std::string &label, const Container &container);
 
-void	runVector(std::vector<int> &vectorContainer);
-// void	runDeque(std::deque<int> &dequeContainer);
+int		PmergeMe(int argc, char **argv);
 
-void	makeVecPairs(std::vector<int> &list, std::vector<int> &winners, std::vector<int> &losers);
+void	sortVectorWithFordJohnson(std::vector<int> &vec);
+void	sortDequeWithFordJohnson(std::deque<int> &deq);
 
 
 #include "PmergeMe.tpp"

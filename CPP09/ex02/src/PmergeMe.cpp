@@ -1,55 +1,37 @@
 #include "PmergeMe.hpp"
-#include <algorithm> // std::upper_bound
+#include <iostream>
+#include <iomanip>
+#include <chrono>
 
-void formPairs(std::vector<int> &list, std::vector<int> &winners, std::vector<int> &losers)
+int	PmergeMe(int argc, char **argv)
 {
-	size_t n = list.size();
-	for (size_t i = 0; i + 1 < n; i += 2)
-	{
-		int a = list[i];
-		int b = list[i + 1];
-		if (a > b)
-		{
-			winners.push_back(a);
-			losers.push_back(b);
-		}
-		else
-		{
-			winners.push_back(b);
-			losers.push_back(a);
-		}
-	}
-	if (n % 2 == 1)
-		losers.push_back(list.back());
-}
+	std::vector<int>	displayContainer;
+	if (parseToCountainer(argc, argv, displayContainer) == -1)
+		return (-1);
+	printContainer("Before:  ", displayContainer);
 
-std::vector<int> insertion(std::vector<int> &winners, std::vector<int> &losers)
-{
-	std::vector<int> result = winners;
+	auto				vectorStart = std::chrono::steady_clock::now();
+	std::vector<int>	vectorContainer;
+	if (parseToCountainer(argc, argv, vectorContainer) == -1)
+		return (-1);
+	sortVectorWithFordJohnson(vectorContainer);
+	std::chrono::duration<double, std::micro> vectorElapsed =
+		std::chrono::steady_clock::now() - vectorStart;
 
-	for (size_t i = 0; i < losers.size(); i++)
-	{
-		std::vector<int>::iterator pos = std::upper_bound(result.begin(), result.end(), losers[i]);
-		result.insert(pos, losers[i]);
-	}
-	return result;
-}
+	auto				dequeStart = std::chrono::steady_clock::now();
+	std::deque<int>		dequeContainer;
+	if (parseToCountainer(argc, argv, dequeContainer) == -1)
+		return (-1);
+	sortDequeWithFordJohnson(dequeContainer);
+	std::chrono::duration<double, std::micro> dequeElapsed =
+		std::chrono::steady_clock::now() - dequeStart;
 
-std::vector<int> sortRecursive(std::vector<int> list)
-{
-	if (list.size() <= 1)
-		return list;
+	printContainer("After:   ", vectorContainer);
 
-	std::vector<int> winners;
-	std::vector<int> losers;
-	formPairs(list, winners, losers);
-
-	std::vector<int> sortedWinners = sortRecursive(winners);
-
-	return insertion(sortedWinners, losers);
-}
-
-void runVector(std::vector<int> &vecContainer)
-{
-	vecContainer = sortRecursive(vecContainer);
+	std::cout << std::fixed << std::setprecision(5);
+	std::cout << "Time to process a range of " << vectorContainer.size()
+			  << " elements with std::vector : " << vectorElapsed.count() << " us" << std::endl;
+	std::cout << "Time to process a range of " << dequeContainer.size()
+			  << " elements with std::deque  : " << dequeElapsed.count() << " us" << std::endl;
+	return (0);
 }
